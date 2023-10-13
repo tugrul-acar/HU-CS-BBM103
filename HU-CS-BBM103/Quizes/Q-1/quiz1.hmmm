@@ -1,0 +1,13 @@
+0 read r1 #takes value of falling time from user 
+1 read r2 #takes value of initialPosition time from user 
+2 read r3 #takes value of initialVelocity from user 
+3 setn r4 -10 #set the gravity value
+4 setn r5 2 # for the formula we need r5=2 => (gravity*fallingtime*fallingtime)/2 
+5 mul r6 r1 r1 # found falling time*falling time
+6 mul r6 r6 r4 # found gravity*fallingtime*fallingtime
+7 div r6 r6 r5 #found the (gravity*fallingtime*fallingtime)/2
+8 mul r7 r1 r3 #found (initialvelocity∗fallingtime)
+9 add r7 r7 r2 #found (initialvelocity∗fallingtime+initialposition)
+10 add r7 r7 r6 #found final position
+11 write r7 #Print contents of results
+12 halt #stop the code
